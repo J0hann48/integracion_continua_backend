@@ -1,0 +1,12 @@
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Pedro', 'Guzman', 'pedro@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Sara', 'Pedroza', 'sara@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Sofia', 'Socrates', 'sofia@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Camilo', 'Wlches', 'camiloo@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Oscar', 'Rodriguez', 'oscar@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Vanesa', 'Gutierres', 'vanesa@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Olga', 'Quintero', 'olga@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Luisa', 'Reyes', 'luisa@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Juan', 'Ortiz', 'juan@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Fabio', 'Torres', 'fabio@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Fernanda', 'Gomez', 'fernanda1@gmail.com', '2020-10-21');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Juliana', 'Guzman', 'juliana32@gmail.com', '2020-10-21');
