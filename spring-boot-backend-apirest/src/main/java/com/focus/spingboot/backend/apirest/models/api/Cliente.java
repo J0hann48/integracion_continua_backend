@@ -1,12 +1,11 @@
 package com.focus.spingboot.backend.apirest.models.api;
 
-import org.hibernate.annotations.NotFound;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 @Entity
 @Table(name="clientes")
+
 public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
