@@ -20,11 +20,12 @@ pipeline {
     stages {
         stage('Make workdir') {
             steps {
-               script {
-               		BUILD_DIR="build_${BRANCH_NAME}_${BUILD_NUMBER}"
+               script {                    
+               		BUILD_DIR="build_${BRANCH_NAME}_${BUILD_NUMBER}"                    
+                    sh("mkdir ${BUILD_DIR}")
+                    sh("ls -R")
                     downloadCode(BUILD_DIR, BRANCH_NAME, URL_REPOSITORY)                
-                }
-                
+                }                
             }
         }
 
@@ -69,7 +70,7 @@ pipeline {
 }
 
 def downloadCode(def build_dir, def branch_name, def url_repository) {
-	dir("${build_dir}/product_repository") {
+	dir("${build_dir}") {
 	sh("git clone -b ${branch_name} ${url_repository} .")    
     }
 }
