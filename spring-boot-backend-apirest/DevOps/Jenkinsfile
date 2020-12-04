@@ -1,0 +1,70 @@
+pipeline {     
+    parameters{        
+
+        string(name: 'BRANCH_NAME',                           
+        defaultValue: 'master',
+        description: 'Repository Branch')
+        
+        string(name: 'URL_REPOSITORY',                           
+        defaultValue: 'https://github.com/J0hann48/integracion_continua_backend.git',
+        description: 'Repository name')
+        
+        string(name: 'VERSION',
+        defaultValue: '1.0.0-SNAPSHOT',
+        description: 'Product Version')
+
+    }
+
+    stages {
+        stage('Make workdir') {
+            steps {
+               script {
+               		BUILD_DIR="build_${BRANCH_NAME}_${BUILD_NUMBER}"
+                    downloadCode(BUILD_DIR, BRANCH_NAME, URL_REPOSITORY)                
+                }
+                
+            }
+        }
+
+        stage('Prepare settings for generation') {
+            parallel {
+                stage('Generate backend paths file') {
+                    steps {
+                        script {
+                            sh("echo skip")
+                        }
+                    }
+                }
+                stage('Generate settings') {
+                    steps {
+                        script {
+                            sh("echo skip")
+                        }
+                    }
+                }
+            }
+        }        
+
+    }
+
+    post {
+        failure {
+            script {
+            }
+        }
+        success {
+            script {
+            }
+        }
+        
+        always {
+            script {
+            }
+        }
+    }    
+}
+
+def downloadCode(def build_dir, def branch_name, def url_repository) {
+	dir("${build_dir}/product_repository") {
+	sh("git clone -b ${branch_name} ${url_repository} .")    
+}
