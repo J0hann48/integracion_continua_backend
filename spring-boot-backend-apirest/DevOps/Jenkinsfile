@@ -67,4 +67,5 @@ pipeline {
 def downloadCode(def build_dir, def branch_name, def url_repository) {
 	dir("${build_dir}/product_repository") {
 	sh("git clone -b ${branch_name} ${url_repository} .")    
+    }
 }
