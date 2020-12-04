@@ -21,7 +21,7 @@ pipeline {
         stage('Make workdir') {
             steps {
                script {                    
-               		BUILD_DIR="build_${BRANCH_NAME}_${BUILD_NUMBER}"                    
+               		BUILD_DIR="build_${BRANCH_NAME}"         
                     sh("mkdir ${BUILD_DIR}")
                     sh("ls -R")
                     downloadCode(BUILD_DIR, BRANCH_NAME, URL_REPOSITORY)                
