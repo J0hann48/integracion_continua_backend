@@ -50,6 +50,7 @@ pipeline {
 
     }
 
+    /*
     post {
         failure {
             script {
@@ -64,7 +65,8 @@ pipeline {
             script {
             }
         }
-    }    
+    }
+    */
 }
 
 def downloadCode(def build_dir, def branch_name, def url_repository) {
