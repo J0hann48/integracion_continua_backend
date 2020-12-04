@@ -1,4 +1,7 @@
 pipeline {     
+    agent{
+        label 'principal'
+    }
     parameters{        
 
         string(name: 'BRANCH_NAME',                           
