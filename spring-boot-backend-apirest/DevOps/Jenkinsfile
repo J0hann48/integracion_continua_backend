@@ -1,6 +1,6 @@
 pipeline {     
-    agent{
-        label 'Principal'
+    agent {
+        docker { image 'ubuntu:latest' }
     }
     parameters{        
 
