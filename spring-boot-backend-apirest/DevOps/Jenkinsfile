@@ -33,6 +33,7 @@ pipeline {
         stage('Build backend') {
             steps {
                script {               
+                   sh("cd ..")
                    sh("mvn clean install -DskipTests")               		
                 }                
             }
