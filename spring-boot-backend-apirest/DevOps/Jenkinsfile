@@ -101,6 +101,7 @@ def downloadCode(def build_dir, def branch_name, def url_repository) {
 
 def renameContainer(def backup){
     if(backup){
+        sh("docker rm carrito-compras-backend-old")
         sh("docker rename carrito-compras-backend carrito-compras-backend-old")
     }else{
         sh("docker rename carrito-compras-backend-old carrito-compras-backend")
