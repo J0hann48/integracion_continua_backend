@@ -32,11 +32,12 @@ pipeline {
 
         stage('Build backend') {
             steps {
-               script {             
-                   sh("pwd")  
-                   sh("cd spring-boot-backend-apirest/")
-                   sh("pwd")
-                   sh("mvn clean install -DskipTests")               		
+                sh("pwd")
+                dir('spring-boot-backend-apirest/'){
+                    sh("pwd")
+                }
+               script {
+                   sh("mvn clean install -DskipTests")         		
                 }                
             }
         }        
