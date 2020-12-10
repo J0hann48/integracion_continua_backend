@@ -34,7 +34,7 @@ pipeline {
             steps {
                script {             
                    sh("pwd")  
-                   sh("cd ..")
+                   sh("cd spring-boot-backend-apirest/")
                    sh("pwd")
                    sh("mvn clean install -DskipTests")               		
                 }                
