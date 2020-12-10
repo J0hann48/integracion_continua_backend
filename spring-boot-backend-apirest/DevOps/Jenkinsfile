@@ -36,13 +36,13 @@ pipeline {
                 /*dir('spring-boot-backend-apirest/'){
                     sh("pwd")
                 }*/
-                dir('spring-boot-backend-apirest/') {
-                    println '>>> SHOULD LS THE spring-boot-backend-apirest DIR'
-                    sh('ls -al')
-                }
+                
                script {
-                   sh('ls -al')
-                   sh("mvn clean install -DskipTests")         		
+                   dir('spring-boot-backend-apirest/') {
+                        println '>>> SHOULD LS THE spring-boot-backend-apirest DIR'
+                        sh('ls -al')                                           
+                        sh("mvn clean install -DskipTests")
+                    }
                 }                
             }
         }        
