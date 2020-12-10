@@ -22,8 +22,8 @@ pipeline {
             steps {
                script {                    
                    sh("echo PRUEBA!")
-               		BUILD_DIR="build_${BRANCH_NAME}_${currentBuild.number}"         
-                    sh("mkdir ${BUILD_DIR}")
+               		//BUILD_DIR="build_${BRANCH_NAME}_${currentBuild.number}"         
+                    //sh("mkdir ${BUILD_DIR}")                    
                     sh("ls -R")
                     /*downloadCode(BUILD_DIR, BRANCH_NAME, URL_REPOSITORY)*/
                 }                
@@ -32,8 +32,10 @@ pipeline {
 
         stage('Build backend') {
             steps {
-               script {               
+               script {             
+                   sh("pwd")  
                    sh("cd ..")
+                   sh("pwd")
                    sh("mvn clean install -DskipTests")               		
                 }                
             }
