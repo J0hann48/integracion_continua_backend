@@ -47,15 +47,30 @@ pipeline {
             }
         }        
 
-        stage('Deploy backend') {
-            steps {
-               script {
-                   sh("docker stop carrito-compras-backend")
-                   renameContainer(true)                   
-                   sh("docker run --network network_name --name carrito-compras-backend -p 8087:8080 j0h4nn/carrito-compras-backend:latest")
+                      
+
+        stage('Prepare settings for generation') {
+            parallel {
+                stage('Deploy backend') {
+                    steps {
+                        script {
+                            sh("docker stop carrito-compras-backend")
+                            renameContainer(true)                   
+                            sh("docker run --network network_name --name carrito-compras-backend -p 8087:8080 j0h4nn/carrito-compras-backend:latest")
+                        }                
+                    }
+                }
+                stage('Listen container run') {
+                    steps {
+                        script {
+                            sleep(60)
+                            currentBuild.result = 'SUCCESS'
+                            return
+                        }
+                    }
                 }                
             }
-        }              
+        }  
     }
     
 
